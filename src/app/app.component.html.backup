@@ -338,42 +338,6 @@
 
   </div>
 
-  <!-- CONTENIDO -->
-  <div [ngStyle]="{ 'background'  : config.fondo,
-                    'padding'     : '20px',
-                    'border'      : '5px solid black',
-                    'border-color': config.color,
-                    'width'       : '100%' }">    
-    <p style="text-align:center; font-size:20px;">{{ descripcion }}</p><br>
-    
-    <!-- Buttons de navegacion -->
-    <div style="text-align: center;">
-      <button [routerLink]="['/home']"       [routerLinkActive]="['active']">Componente Home</button>
-      <button [routerLink]="['/videojuego']" [routerLinkActive]="['active']">Componente Videojuego</button>
-      <button [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">Componente Zapatillas</button>
-      <button [routerLink]="['/cursos']"     [routerLinkActive]="['active']">Componente Cursos</button>
-      <!-- <button [routerLink]="['/cursos/Jorge/30']" [routerLinkActive]="['active']">Componente Cursos</button> -->
-      <button [routerLink]="['/externo']"    [routerLinkActive]="['active']">Componente Externo</button>
-      <button [routerLink]="['/contacto']"   [routerLinkActive]="['active']">Componente Contacto</button>
-    </div>
-
-    <!-- Se muestra boton 'Ocultar' cuando mostrar_cursos este true -->
-    <!-- <button (click)="ocultarCursos(false)" *ngIf="mostrar_cursos">Ocultar Componente Cursos</button>  -->
-    
-    <!-- Se muestra boton 'Mostrar' cuando mostrar_cursos este false -->
-    <!-- <button (click)="ocultarCursos(true)" *ngIf="!mostrar_cursos">Mostrar Componente Cursos</button>  -->
-
-    <!-- Aqui van la propiedad selector de los componentes -->
-    <!-- 
-    <videojuego></videojuego>
-    <zapatillas></zapatillas>
-    <app-cursos *ngIf="mostrar_cursos == true"></app-cursos> 
-    -->
-        
-    <router-outlet></router-outlet>    
-  </div>
-  <!-- CERRAR CONTENIDO -->
-
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>

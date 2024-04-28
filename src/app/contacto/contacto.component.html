@@ -1,0 +1,45 @@
+<h2>Contacto</h2>
+
+<form #formContacto="ngForm" (ngSubmit)="onSubmit(formContacto)">
+    <div>
+        <label for="nombre">Nombre</label> <br/>
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" 
+        required pattern="[a-z A-Z 0-9]+">
+
+        <small *ngIf="!nombre.valid && nombre.touched">
+            El nombre no es valido
+        </small>
+    </div>
+
+    <div>
+        <label for="apellidos">Apellidos</label> <br/>
+        <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="usuario.apellidos" 
+        required pattern="[a-z A-Z 0-9]+">
+
+        <small *ngIf="!apellidos.valid && apellidos.touched">
+            Los apellidos no son validos
+        </small>
+    </div>
+
+    <div>
+        <label for="email">Email</label> <br/>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" 
+        required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+        <small *ngIf="!email.valid && email.touched">
+            El email no es valido
+        </small>
+    </div>
+
+    <div >
+        <label for="mensaje">Mensaje</label> <br/>
+        <textarea name="mensaje" cols="21" rows="3" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" 
+        required pattern="[a-z A-Z 0-9]+"></textarea>
+
+        <small *ngIf="!mensaje.valid && mensaje.touched">
+            El mensaje no es valido
+        </small>
+    </div>
+
+   <input type="submit" value="Registrame" class="btn btn-success" [disabled]="!formContacto.form.valid">
+</form>
